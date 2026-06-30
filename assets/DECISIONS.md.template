@@ -1,0 +1,20 @@
+# DECISIONS
+
+<!--
+  The "why" that code alone loses. Record durable choices so a future session does not re-litigate
+  them or silently drift. Append-only; one entry per decision. Keep entries short.
+-->
+
+## D-001 — <short title>
+- **Date:** <YYYY-MM-DD>
+- **Decision:** <what was chosen>
+- **Why:** <the reasoning / constraints that drove it>
+- **Rejected alternative:** <what was considered and why not>
+- **Remaining constraints:** <anything future work must still respect>
+
+## D-002 — <short title>
+- **Date:** <YYYY-MM-DD>
+- **Decision:** <…>
+- **Why:** <…>
+- **Rejected alternative:** <…>
+- **Remaining constraints:** <…>

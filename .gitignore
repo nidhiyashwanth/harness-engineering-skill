@@ -1,0 +1,13 @@
+# skill-creator eval workspaces (generated benchmark runs, viewer output, feedback)
+harness-engineering-workspace/
+*-workspace/
+feedback.json
+
+# packaged skill artifacts
+*.skill
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

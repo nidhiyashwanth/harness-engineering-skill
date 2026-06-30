@@ -1,0 +1,32 @@
+# PROGRESS
+
+<!--
+  Living state for cross-session continuity. A fresh session reads this FIRST and must be able to
+  resume in ~3 minutes. Update it at clock-out. Record verification RESULTS here, not in chat.
+-->
+
+## Current state
+- Latest commit: `<sha — short message>`
+- Last verification: `<command>` → `<pass/fail + date>`
+- Branch: `<branch>`
+
+## Feature status  (source of truth: `<feature-list.json>`)
+- Passing:     <F01, F02 …>
+- Active (WIP=1): <F03 — one line on what's in flight>
+- Blocked:     <F0x — why / what unblocks it>
+- Not started: <F04, F05 …>
+
+## Known issues / blockers
+- <issue → impact → what would resolve it>
+
+## Next actions  (ordered; the next session starts at #1)
+1. <one concrete, executable first action>
+2. <…>
+
+---
+## Session Exit Checklist  (a session is not done until every box is checked)
+- [ ] Build passes
+- [ ] All tests pass, including pre-existing ones
+- [ ] This PROGRESS.md and the feature list are updated
+- [ ] No debug code, temp files, or stale TODOs remain
+- [ ] Standard startup path works
