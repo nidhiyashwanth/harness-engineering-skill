@@ -1,0 +1,10 @@
+{
+  "name": "harness-engineering",
+  "description": "Adds the harness-engineering skill for making repositories agent-ready and diagnosing why coding agents fail to finish real tasks.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Nidhi Yashwanth"
+  },
+  "homepage": "https://github.com/nidhiyashwanth/harness-engineering-skill",
+  "repository": "https://github.com/nidhiyashwanth/harness-engineering-skill"
+}

@@ -1,0 +1,45 @@
+{
+  "skill_name": "harness-engineering",
+  "_note": "Test prompts for the skill-creator eval loop. Prompts are realistic user asks. Assertions are objectively checkable; they are drafted but not yet run — invoke the skill-creator eval loop to benchmark with-skill vs. baseline.",
+  "evals": [
+    {
+      "id": 0,
+      "name": "diagnose-build-breaks",
+      "prompt": "Every time I let Claude Code work on my Python API it says it finished but the build is broken and half the time it touched files I never asked about. It's a FastAPI repo with pytest already set up. How do I stop this from happening?",
+      "expected_output": "Attributes the symptom to harness layers (no Definition of Done / completion gate = feedback; touching unrelated files = no scope limit). Recommends WIP=1, an executable Definition of Done, a completion gate where the agent can't self-pass, and a routing AGENTS.md with verification commands. Should reference the diagnostic loop rather than suggesting a different model.",
+      "assertions": [
+        {"text": "Attributes failures to specific harness subsystems (feedback/state/instructions) before proposing fixes"},
+        {"text": "Recommends WIP=1 / one-active-task to address the over-touching of files"},
+        {"text": "Recommends an executable Definition of Done or completion gate (not the agent self-declaring done)"},
+        {"text": "Does NOT primarily recommend switching to a more capable model"}
+      ],
+      "files": []
+    },
+    {
+      "id": 1,
+      "name": "setup-agents-md-from-scratch",
+      "prompt": "I want to make my Node/TypeScript monorepo friendly for AI coding agents. There's nothing set up right now beyond a README. Can you set up the instruction and verification scaffolding for me?",
+      "expected_output": "Produces a routing-style AGENTS.md (50-200 lines: overview, run commands, verification commands, <=15 hard constraints, routing map to topic docs) rather than one giant file. Includes explicit verification commands and a Definition of Done. May add PROGRESS.md / DECISIONS.md / feature list. Runs or references the fresh-session test.",
+      "assertions": [
+        {"text": "Creates a routing AGENTS.md kept short (not a monolithic 600-line file) that links to topic docs"},
+        {"text": "Includes explicit, executable verification commands (test/lint/typecheck/build)"},
+        {"text": "Includes <=15 short, testable hard constraints rather than a long flat rule list"},
+        {"text": "References the fresh-session test (what is this / how to run / how to verify / where are we)"}
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "name": "context-lost-across-sessions",
+      "prompt": "My agent forgets everything between sessions — each new chat re-explores the repo for 20 minutes and sometimes redoes work that was already done or undoes earlier decisions. It's a multi-day project. What's the fix?",
+      "expected_output": "Identifies this as a State/continuity failure. Recommends the handoff stack (PROGRESS.md for living state, DECISIONS.md for the why, atomic commits), clock-in/clock-out routines, handing off before ~60% context, and a feature list so finished work isn't redone. Emphasizes persisting the why, the state, and the next move in the repo (not chat).",
+      "assertions": [
+        {"text": "Identifies the failure as a state/continuity (handoff) problem"},
+        {"text": "Recommends PROGRESS.md and DECISIONS.md (state + the 'why') stored in the repo, not chat history"},
+        {"text": "Recommends a feature list or scope surface so completed work is not redone"},
+        {"text": "Mentions clock-in/clock-out or handing off before context runs out"}
+      ],
+      "files": []
+    }
+  ]
+}

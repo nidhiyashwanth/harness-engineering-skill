@@ -1,0 +1,31 @@
+{
+  "name": "harness-engineering",
+  "version": "0.1.0",
+  "description": "Adds the harness-engineering skill for making repositories agent-ready and diagnosing why coding agents fail to finish real tasks.",
+  "author": {
+    "name": "Nidhi Yashwanth",
+    "url": "https://github.com/nidhiyashwanth"
+  },
+  "repository": "https://github.com/nidhiyashwanth/harness-engineering-skill",
+  "homepage": "https://github.com/nidhiyashwanth/harness-engineering-skill",
+  "keywords": [
+    "agent-skills",
+    "codex",
+    "claude-code",
+    "harness-engineering"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Harness Engineering",
+    "shortDescription": "Make repos agent-ready and diagnose failed agent workflows.",
+    "longDescription": "Harness Engineering helps agents improve the instructions, environment, state, verification, and feedback loops around a repository so coding agents can finish real tasks reliably.",
+    "developerName": "Nidhi Yashwanth",
+    "category": "Productivity",
+    "capabilities": [
+      "Repository setup",
+      "Verification planning",
+      "Agent workflow diagnosis"
+    ],
+    "defaultPrompt": "Use harness-engineering to make this repo agent-ready."
+  }
+}

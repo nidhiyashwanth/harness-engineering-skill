@@ -40,9 +40,40 @@ harness-engineering/
 
 ## Install
 
-Copy the `harness-engineering/` directory into your skills directory (e.g.
-`~/.claude/skills/harness-engineering/`), or package it with the skill-creator's `package_skill.py`
-and install the resulting `.skill` file.
+### Claude Code plugin marketplace
+
+Add this repository as a marketplace, then install the plugin:
+
+```text
+/plugin marketplace add nidhiyashwanth/harness-engineering-skill
+/plugin install harness-engineering@harness-engineering-skill
+```
+
+The plugin installs the self-contained skill from
+`plugins/harness-engineering/skills/harness-engineering/`, including `references/`, `assets/`, and
+`evals/`.
+
+### Codex plugin marketplace
+
+Add this repository as a marketplace, then install `harness-engineering` from the Codex plugin
+directory:
+
+```bash
+codex plugin marketplace add nidhiyashwanth/harness-engineering-skill
+```
+
+Codex reads `.agents/plugins/marketplace.json`, which points at the same self-contained plugin
+payload under `plugins/harness-engineering/`.
+
+### Direct skill install
+
+You can also copy this repository root as a plain skill folder:
+
+- Claude Code personal skill: `~/.claude/skills/harness-engineering/`
+- Codex personal skill: `~/.agents/skills/harness-engineering/`
+
+When copying manually, copy the whole directory, not just `SKILL.md`, so `references/` and `assets/`
+are available for progressive disclosure.
 
 ## Credit
 

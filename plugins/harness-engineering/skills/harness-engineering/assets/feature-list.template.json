@@ -1,0 +1,27 @@
+{
+  "_comment": "Feature list as a harness PRIMITIVE, not a memo. Every row has behavior + verification + state (+ evidence). The agent may set state to 'active' and request verification, but only the harness/verifier moves a row to 'passing' after the verification command succeeds with attached evidence. Keep each feature one-session-sized. States: not_started | active | blocked | passing. Enforce WIP=1: at most one 'active' row.",
+  "wip_limit": 1,
+  "features": [
+    {
+      "id": "F01",
+      "behavior": "User can register: POST /api/register with email+password returns 201 and creates a user",
+      "verification": "curl -s -X POST localhost:8000/api/register -d '{...}' | jq -e '.status==201'",
+      "state": "passing",
+      "evidence": "commit abc123; e2e log artifacts/f01-register.log"
+    },
+    {
+      "id": "F02",
+      "behavior": "User can add an item to cart: POST /cart/items returns 201",
+      "verification": "make e2e-cart  # exercises UI -> service -> db",
+      "state": "active",
+      "evidence": ""
+    },
+    {
+      "id": "F03",
+      "behavior": "Checkout completes payment flow end-to-end",
+      "verification": "make e2e-checkout",
+      "state": "not_started",
+      "evidence": ""
+    }
+  ]
+}

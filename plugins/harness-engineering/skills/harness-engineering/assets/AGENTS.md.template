@@ -1,0 +1,42 @@
+<!--
+  AGENTS.md — agent entry file (also works as CLAUDE.md).
+  PRINCIPLE: this file is a ROUTER, not an encyclopedia. Keep it 50–200 lines.
+  It must let a fresh agent session answer: what is this / how to run / how to verify / where are we.
+  Put detailed guidance in topic docs and link to them; keep durable rules as executable tests.
+-->
+
+# <Project name>
+
+<One or two sentences: what this project is and who/what it serves.>
+
+## Run it
+```bash
+<setup command>      # e.g. make setup   — installs deps, prepares env from scratch
+<dev/run command>    # e.g. make dev     — starts the app
+```
+
+## Verify it  (Definition of Done is "these pass", not "looks right")
+```bash
+<test command>       # e.g. make test    — unit + integration
+<lint command>       # e.g. make lint
+<typecheck command>  # e.g. make typecheck
+<e2e command>        # e.g. make e2e      — full pipeline; required for cross-component work
+<full check>         # e.g. make check    — runs all of the above
+```
+
+## Hard constraints  (≤15, global, non-negotiable, short and testable)
+1. Work on ONE feature at a time (WIP = 1). Start the next only after E2E verification passes.
+2. Do not mark a feature `passing` yourself — the harness verifies and updates state.
+3. Do not refactor / optimize / restyle before the core behavior passes its functional checks.
+4. <add project-specific red lines: forbidden dependencies, layering rules, security limits…>
+
+## Working agreement
+- Scope & status live in the feature list: `<path, e.g. feature-list.json>`.
+- Session state lives in `PROGRESS.md`; durable decisions in `DECISIONS.md`.
+- At session end, run the Session Exit Checklist (see `PROGRESS.md`) and leave the repo clean.
+
+## Routing map  (read these only when the task calls for it)
+- API / endpoints …… `src/api/ARCHITECTURE.md`
+- Database / schema … `src/db/CONSTRAINTS.md`
+- Testing strategy … `docs/testing.md`
+- <topic> ………………… `<path>`   (each topic doc: 50–150 lines, with Source / Applicability / Expiry)

@@ -1,0 +1,7 @@
+interface:
+  display_name: "Harness Engineering"
+  short_description: "Make repos reliable for coding agents."
+  brand_color: "#2563EB"
+  default_prompt: "Use $harness-engineering to make this repository agent-ready."
+policy:
+  allow_implicit_invocation: true

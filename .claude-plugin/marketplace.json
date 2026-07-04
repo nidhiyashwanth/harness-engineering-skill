@@ -1,0 +1,17 @@
+{
+  "name": "harness-engineering-skill",
+  "owner": {
+    "name": "Nidhi Yashwanth"
+  },
+  "plugins": [
+    {
+      "name": "harness-engineering",
+      "source": "./plugins/harness-engineering",
+      "description": "Make repositories agent-ready and diagnose failed coding-agent workflows.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Nidhi Yashwanth"
+      }
+    }
+  ]
+}
