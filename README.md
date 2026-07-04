@@ -79,3 +79,7 @@ are available for progressive disclosure.
 
 Content distilled from *Learn Harness Engineering* by Walking Labs. This repo restates and
 reorganizes that material as an operational skill; see the course for the full lectures.
+
+## License
+
+MIT. See [LICENSE](LICENSE).

@@ -9,6 +9,9 @@
       "source": "./plugins/harness-engineering",
       "description": "Make repositories agent-ready and diagnose failed coding-agent workflows.",
       "version": "0.1.0",
+      "category": "development",
+      "homepage": "https://github.com/nidhiyashwanth/harness-engineering-skill",
+      "license": "MIT",
       "author": {
         "name": "Nidhi Yashwanth"
       }
